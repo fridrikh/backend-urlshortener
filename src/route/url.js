@@ -4,7 +4,9 @@ import { restError, checkParams } from '../middleware';
 
 const router = new Router();
 
-router.post('/', restError, checkParams.createUrl, Url.createUrl);
+router.post('/url/', restError, checkParams.createUrl, Url.createUrl);
+
+router.post('/custom/', restError, checkParams.createCustomUrl, Url.createCustomUrl);
 
 router.get('/:id', restError, Url.encodeUrl);
 

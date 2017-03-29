@@ -20,7 +20,7 @@ or (without a nodemon module)
 
 ```sh
 $ cd backend
-$ yandex install
+$ yarn install
 $ NODE_ENV=development yarn build
 $ yarn start
 ```

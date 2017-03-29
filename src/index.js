@@ -21,6 +21,7 @@ app.use(logger()); // logger
 app.use(bodyParser()); // parsing body from (Content-Type: application/x-www-form-urlencoded)
 
 app.use(route.routes()); // connect routes
+app.use(route.allowedMethods());
 
 const server = createServer(app.callback());
 

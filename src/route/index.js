@@ -3,6 +3,6 @@ import url from './url';
 
 const router = new Router();
 
-router.use('/url', url.routes());
+router.use(url.routes());
 
 export default router;
