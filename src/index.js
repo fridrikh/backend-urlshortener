@@ -17,10 +17,10 @@ mongoose.connect(config.mongo.mongoUri, {
     }
 });
 
-app.use(logger());
-app.use(bodyParser());
+app.use(logger()); // logger
+app.use(bodyParser()); // parsing body from (Content-Type: application/x-www-form-urlencoded)
 
-app.use(route.routes());
+app.use(route.routes()); // connect routes
 
 const server = createServer(app.callback());
 

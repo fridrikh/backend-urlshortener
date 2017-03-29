@@ -20,7 +20,8 @@
     "koa-bodyparser": "2",
     "koa-logger": "^2.0.1",
     "koa-router": "next",
-    "mongoose": "^4.9.2"
+    "mongoose": "^4.9.2",
+    "shortid": "^2.2.8"
   },
   "devDependencies": {
     "babel-cli": "^6.24.0",

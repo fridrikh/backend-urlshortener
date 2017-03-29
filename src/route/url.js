@@ -1,14 +1,11 @@
 import Router from 'koa-router';
+import { Url } from '../controllers';
+import { restError, checkParams } from '../middleware';
 
 const router = new Router();
 
-router.post('/', async (ctx) => {
-    const { url } = ctx.request.body;
-    ctx.body = { success: true, original_url: url };
-});
+router.post('/', restError, checkParams.createUrl, Url.createUrl);
 
-router.get('/:encode', async (ctx) => {
-    ctx.body = { success: true, short_url: encode };
-});
+router.get('/:id', restError, Url.encodeUrl);
 
 export default router;
