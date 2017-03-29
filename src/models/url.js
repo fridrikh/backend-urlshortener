@@ -1,5 +1,6 @@
 import mongoose from 'mongoose';
 import shortId from 'shortid';
+import { Queue } from '../services';
 
 /**
  * UrlSchema
@@ -13,10 +14,12 @@ const UrlSchema = new mongoose.Schema({
 /**
  * Hook save data url
  * Generate unique short url
+ * Create delayed task
  */
 UrlSchema.pre('save', function(next) {
     this.originalUrl = this.originalUrl.toLowerCase();
     this.shortUrl = shortId.generate().toLowerCase();
+    Queue.createTask({ id: this.id });
     next();
 });
 

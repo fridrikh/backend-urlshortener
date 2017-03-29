@@ -16,6 +16,7 @@
   "author": "A.Jah <alnikf@mail.ru>",
   "license": "MIT",
   "dependencies": {
+    "bull": "^2.2.5",
     "koa": "^2.2.0",
     "koa-bodyparser": "2",
     "koa-logger": "^2.0.1",
