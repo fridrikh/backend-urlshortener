@@ -4,6 +4,7 @@ import logger from 'koa-logger';
 import bodyParser from 'koa-bodyparser';
 import mongoose from 'mongoose';
 import config from './config';
+import route from './route';
 
 const app = new Koa();
 
@@ -18,6 +19,8 @@ mongoose.connect(config.mongo.mongoUri, {
 
 app.use(logger());
 app.use(bodyParser());
+
+app.use(route.routes());
 
 const server = createServer(app.callback());
 
