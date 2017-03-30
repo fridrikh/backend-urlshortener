@@ -33,7 +33,7 @@ export default async function (ctx, next) {
             success: false,
             error: {
                 status: ctx.status,
-                title: err.message
+                message: err.message
             }
         });
         ctx.app.emit('error', err, ctx);

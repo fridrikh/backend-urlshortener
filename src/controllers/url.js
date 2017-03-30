@@ -50,7 +50,7 @@ async function encodeUrl(ctx) {
         );
 
         (urlData)
-            ? ctx.redirect(urlData.originalUrl)
+            ? ctx.body = { success: true, url: { redirectTo: urlData.originalUrl } }
             : ctx.body = { success: false, error: { status: 400, message: 'Not found url' } }
 
     } catch(error) { throw error }
