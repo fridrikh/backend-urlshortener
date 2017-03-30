@@ -6,7 +6,6 @@
  */
 async function createUrl(ctx, next) {
     const { originalUrl } = ctx.request.body;
-    console.log('createUrl', originalUrl);
     (!originalUrl)
         ? ctx.body = { success: false, error: { status: 400, title: 'Param originalUrl is required' } }
         : await next()
@@ -20,7 +19,6 @@ async function createUrl(ctx, next) {
  */
 async function createCustomUrl(ctx, next) {
     const { originalUrl, customShortUrl } = ctx.request.body;
-    console.log(originalUrl, customShortUrl);
     (originalUrl && customShortUrl)
         ? await next()
         : ctx.body = { success: false, error: { status: 400, title: 'Param originalUrl is required' } }

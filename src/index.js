@@ -3,6 +3,7 @@ import Koa from 'koa';
 import logger from 'koa-logger';
 import bodyParser from 'koa-bodyparser';
 import mongoose from 'mongoose';
+import cors from 'kcors';
 import config from './config';
 import route from './route';
 
@@ -16,6 +17,8 @@ mongoose.connect(config.mongo.mongoUri, {
         }
     }
 });
+
+app.use(cors()); // Cross-Origin
 
 app.use(logger()); // logger
 app.use(bodyParser()); // parsing body from (Content-Type: application/x-www-form-urlencoded)
